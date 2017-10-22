@@ -1,0 +1,11 @@
+server:
+  port: 0
+
+management:
+  port: 0
+  security:
+    enabled: false
+
+messaging:
+  exchange:
+    fanout: as.fanout

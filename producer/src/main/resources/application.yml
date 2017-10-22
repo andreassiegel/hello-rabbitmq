@@ -1,2 +1,6 @@
 server:
   port: 8080
+
+messaging:
+  exchange:
+    fanout: as.fanout
