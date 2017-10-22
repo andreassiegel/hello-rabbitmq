@@ -26,7 +26,7 @@ public class ProducerServiceAmqp implements ProducerService {
   public void broadcast(Event event) {
 
     try {
-      amqpTemplate.convertAndSend(broadcastExchange, "", event.toString());
+      amqpTemplate.convertAndSend(broadcastExchange, "", event);
       log.info("Send message to fanout exchange '{}': {}", broadcastExchange, event);
     } catch (AmqpException e) {
       log.warn("Sending message to fanout exchange '{}' failed: {}", broadcastExchange, e.toString());

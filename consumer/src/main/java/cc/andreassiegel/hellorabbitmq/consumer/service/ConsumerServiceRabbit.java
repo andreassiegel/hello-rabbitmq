@@ -1,7 +1,9 @@
 package cc.andreassiegel.hellorabbitmq.consumer.service;
 
 import cc.andreassiegel.hellorabbitmq.common.annotation.FanoutListener;
+import cc.andreassiegel.hellorabbitmq.common.model.Event;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -9,8 +11,8 @@ import org.springframework.stereotype.Component;
 public class ConsumerServiceRabbit {
 
   @FanoutListener
-  public void processMessage(String content) {
+  public void processMessage(@Payload Event content) {
 
-    log.info("Received message {}", content);
+    log.info("Received message object {}", content);
   }
 }
