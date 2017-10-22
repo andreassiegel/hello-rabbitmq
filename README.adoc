@@ -27,9 +27,32 @@ image:https://coveralls.io/repos/github/andreassiegel/hello-rabbitmq/badge.svg?b
 
 == Prerequisites
 
-This project requires a running RabbitMQ server. It can be started on your local machine using `docker-compose`:
+=== RabbitMQ
+
+This project requires a running RabbitMQ server.
+
+==== Setup
+
+It can be started on your local machine using `docker-compose`:
 
 [source,bash]
 ----
 $ docker-compose up -d rabbitmq
 ----
+
+==== Configuration
+
+The applications in this repository use the implicit default configuration for RabbitMQ:
+
+[source,yml]
+----
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtualhost: vhost
+----
+
+If changed, these values need to be set in the `application.yml` configuration files of the services that are supposed to connect to that RabbitMQ server.
