@@ -1,6 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-### Standard .gitignore template
-# Created by .ignore support plugin (hsz.mobi)
 ### Java template
 # Compiled class file
 *.class
@@ -125,7 +123,10 @@ buildNumber.properties
 ## Plugin-specific files:
 
 # IntelliJ
-/out/
+.idea
+*.iml
+out
+gen
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
