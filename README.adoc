@@ -1,0 +1,15 @@
+= Hello RabbitMQ
+
+This is a sample project to experiment with link::https://www.rabbitmq.com/[RabbitMQ].
+
+image:https://travis-ci.org/andreassiegel/hello-rabbitmq.svg?branch=master["Build Status", link="https://travis-ci.org/andreassiegel/hello-rabbitmq"]
+image:https://coveralls.io/repos/github/andreassiegel/hello-rabbitmq/badge.svg?branch=master["Test Coverage", link="https://coveralls.io/github/andreassiegel/hello-rabbitmq?branch=master"]
+
+== Prerequisites
+
+This project requires a running RabbitMQ server. It can be started on your local machine using `docker-compose`:
+
+[source,bash]
+----
+$ docker-compose up -d rabbitmq
+----
