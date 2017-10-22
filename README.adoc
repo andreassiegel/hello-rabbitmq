@@ -1,4 +1,24 @@
 = Hello RabbitMQ
+// Settings:
+:experimental:
+:idprefix:
+:idseparator: -
+ifndef::env-github[:icons: font]
+ifdef::env-github,env-browser[]
+:toc: preamble
+:toclevels: 3
+endif::[]
+ifdef::env-github[]
+:status:
+:outfilesuffix: .adoc
+:!toc-title:
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
 
 This is a sample project to experiment with link::https://www.rabbitmq.com/[RabbitMQ].
 
