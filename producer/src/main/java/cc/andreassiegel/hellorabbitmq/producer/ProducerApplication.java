@@ -1,4 +1,4 @@
-package cc.andreassiegel.hellorabbitmq;
+package cc.andreassiegel.hellorabbitmq.producer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
