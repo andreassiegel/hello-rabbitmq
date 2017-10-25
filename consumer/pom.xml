@@ -9,7 +9,7 @@
     </parent>
 
     <groupId>cc.andreassiegel</groupId>
-    <artifactId>hellorabbitmq-consumer</artifactId>
+    <artifactId>hello-rabbitmq-consumer</artifactId>
     <packaging>jar</packaging>
 
     <name>Hello RabbitMQ Consumer</name>
@@ -18,7 +18,7 @@
     <dependencies>
         <dependency>
             <groupId>cc.andreassiegel</groupId>
-            <artifactId>hellorabbitmq-common</artifactId>
+            <artifactId>hello-rabbitmq-common</artifactId>
         </dependency>
 
         <dependency>
@@ -33,5 +33,14 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

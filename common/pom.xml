@@ -9,7 +9,7 @@
     </parent>
 
     <groupId>cc.andreassiegel</groupId>
-    <artifactId>hellorabbitmq-common</artifactId>
+    <artifactId>hello-rabbitmq-common</artifactId>
 
     <dependencyManagement>
         <dependencies>
