@@ -115,7 +115,7 @@ POST localhost:8080/broadcast
   "payload": {
     "flag": true,
     "count": 4,
-    elements: [
+    "elements": [
         "value"
     ]
    }
@@ -139,7 +139,7 @@ POST localhost:8080/send/topic/{routingKey}
   "payload": {
     "flag": true,
     "count": 4,
-    elements: [
+    "elements": [
         "value"
     ]
    }
