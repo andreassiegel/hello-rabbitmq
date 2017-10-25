@@ -9,3 +9,4 @@ management:
 messaging:
   exchange:
     fanout: as.fanout
+    topic: as.topic

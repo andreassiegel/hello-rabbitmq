@@ -32,6 +32,15 @@ public class ProducerConfiguration {
   }
 
   @Bean
+  public Exchange topicExchange() {
+
+    log.info("Creating durable Topic exchange {}", properties.getTopic());
+    return ExchangeBuilder.topicExchange(properties.getTopic())
+        .durable(true)
+        .build();
+  }
+
+  @Bean
   public AmqpTemplate rabbitTemplate(ConnectionFactory connectionFactory, MessageConverter messageConverter) {
 
     RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);

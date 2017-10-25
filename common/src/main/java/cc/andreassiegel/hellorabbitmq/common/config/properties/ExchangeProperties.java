@@ -8,4 +8,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class ExchangeProperties {
 
   private String fanout;
+
+  private String topic;
 }

@@ -4,6 +4,7 @@ import cc.andreassiegel.hellorabbitmq.common.model.Event;
 import cc.andreassiegel.hellorabbitmq.producer.service.ProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,9 +24,16 @@ public class ProducerRestController {
   }
 
   @RequestMapping(method = POST, path = "/broadcast", consumes = APPLICATION_JSON_UTF8_VALUE)
-  public ResponseEntity<?> sendEvent(@RequestBody Event event) {
+  public ResponseEntity<?> sendBroadcastEvent(@RequestBody Event event) {
 
     producerService.broadcast(event);
+    return ResponseEntity.noContent().build();
+  }
+
+  @RequestMapping(method = POST, path = "/send/topic/{routingKey:.+}", consumes = APPLICATION_JSON_UTF8_VALUE)
+  public ResponseEntity<?> sendTopicEvent(@PathVariable("routingKey") String routingKey, @RequestBody Event event) {
+
+    producerService.sendToTopic(routingKey, event);
     return ResponseEntity.noContent().build();
   }
 }
