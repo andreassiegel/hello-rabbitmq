@@ -1,5 +1,5 @@
 ---
-version: '2'
+version: '3'
 
 services:
   rabbitmq:
@@ -7,3 +7,22 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+
+  producer:
+    build:
+      context: ./producer
+    environment:
+      RABBITMQ_HOST: ${HOST_IP}
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    depends_on:
+      - rabbitmq
+
+  consumer:
+    build:
+      context: ./consumer
+    environment:
+      RABBITMQ_HOST: ${HOST_IP}
+    depends_on:
+      - rabbitmq

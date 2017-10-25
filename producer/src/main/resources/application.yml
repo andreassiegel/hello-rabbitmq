@@ -5,3 +5,7 @@ messaging:
   exchange:
     fanout: as.fanout
     topic: as.topic
+
+spring:
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
