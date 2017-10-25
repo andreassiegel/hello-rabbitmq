@@ -7,7 +7,6 @@ import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
@@ -29,7 +28,7 @@ public class ConsumerServiceRabbit {
 
   @RabbitListener(bindings = @QueueBinding(value = @Queue(value = "log-consumer", durable = "true"), key = "${messaging.exchange.topic}" + ".#",
       exchange = @Exchange(value = "${messaging.exchange.topic}", type = TOPIC, durable = "true")))
-  public void topicListener(@Payload Event event, AmqpHeaders headers1, @Headers Map<String, Object> headers) {
+  public void topicListener(@Payload Event event, @Headers Map<String, Object> headers) {
 
     log.info("Received message object on topic exchange: {}", event);
     log.info("Headers: {}", headers);
